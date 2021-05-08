@@ -7,6 +7,9 @@
         </svg>
     </div>
     <form class="form" (ngSubmit)="login()" [formGroup]="loginForm">
+        <app-alert [show]="showError">
+            <span>{{ errorMessage }}</span>
+        </app-alert>
         <h2 class="form__heading">Login</h2>
         <div class="form__control">
             <label for="email">Email</label>
@@ -18,6 +21,7 @@
             <input type="password" id="password" minlength="4" formControlName="password" placeholder="" required>
             <small>Min length is 4 characters</small>
         </div>
-        <button class="cta" type="submit">Login</button>
+        <button class="cta" type="submit" [disabled]="loginForm.invalid">Login</button>
+        <p class="form__redirect">Or if you don't have an account <a routerLink="/register" data-link="true">register</a></p>
     </form>
 </div>

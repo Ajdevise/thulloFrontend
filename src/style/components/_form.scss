@@ -1,9 +1,10 @@
 .form {
-    padding: 0rem 1rem 0rem 1rem;
+    padding: 1rem;
     max-width: 25rem;
     width: 100%;
     display: grid;
     row-gap: 2rem;
+    background-color: var(--col-white);
 
     &__heading {
         text-align: center;
@@ -33,6 +34,11 @@
             color: red;
             display: none;
         }
+    }
+
+    &__redirect {
+        font-size: .8rem;
+        text-align: center;
     }
 
     button {

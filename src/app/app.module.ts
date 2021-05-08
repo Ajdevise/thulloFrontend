@@ -1,24 +1,39 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './shared/components/login/login.component';
+import { RegisterComponent } from './shared/components/register/register.component';
+import { AlertComponent } from './shared/components/alert/alert.component';
+import { AppInitService } from './shared/initialization/app-init.service';
+import { initializeApp1 } from './shared/initialization/initialize-function';
+import { BoardsComponent } from './components/boards/boards.component';
+import { AuthInterceptor } from './shared/interceptor/auth-interceptor';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AlertComponent,
+    BoardsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    AppInitService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+    { provide: APP_INITIALIZER, useFactory: initializeApp1, deps: [AppInitService], multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
