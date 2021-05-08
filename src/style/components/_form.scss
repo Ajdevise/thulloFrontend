@@ -1,0 +1,41 @@
+.form {
+    padding: 0rem 1rem 0rem 1rem;
+    max-width: 25rem;
+    width: 100%;
+    display: grid;
+    row-gap: 2rem;
+
+    &__heading {
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    &__control {
+        position: relative;
+
+        input {
+            width: 100%;
+            background-color: var(--col-gray);
+            padding: .4rem .7rem;
+            font-size: .9rem;
+
+            &:not(:focus):invalid:not(:placeholder-shown) ~ small {
+                display: block;
+            }
+        }
+
+        label {
+            font-size: .9rem;
+        }
+
+        small {
+            position: absolute;
+            color: red;
+            display: none;
+        }
+    }
+
+    button {
+        justify-self: center;
+    }
+}

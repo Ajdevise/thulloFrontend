@@ -1,0 +1,8 @@
+// "small": 576px, "medium": 768px, "large": 992px, "x:large": 1200px
+$breakpoints: ("small": 36em, "medium": 48em, "large": 62em, "x:large": 75em);
+
+@mixin breakpoints-down($size) {
+    @media screen and (max-width: map-get($breakpoints, $size)) {
+        @content;
+    }
+}

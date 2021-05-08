@@ -1,0 +1,22 @@
+.form-wrapper {
+    max-width: 50rem;
+    width: 100%;
+}
+
+.decoration {
+    flex: 60%;
+    background-color: var(--col-blue);
+    min-height: 10rem;
+
+    svg {
+        color: #ffffff;
+    }
+
+    @include breakpoints-down("medium") {
+        width: calc(100% - 2rem);
+    }
+}
+
+.form {
+    flex: 40%;
+}
