@@ -1,6 +1,11 @@
 .form-wrapper {
     max-width: 50rem;
     width: 100%;
+    display: flex;
+
+    @include breakpoints-down("medium") {
+        justify-content: center;
+    }
 }
 
 .decoration {
@@ -13,7 +18,7 @@
     }
 
     @include breakpoints-down("medium") {
-        width: calc(100% - 2rem);
+        display: none;
     }
 }
 
