@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { finalize } from 'rxjs/operators';
 import { AuthenticationService } from 'src/app/shared/services/authentication.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { AuthenticationService } from 'src/app/shared/services/authentication.se
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  loading: boolean = false;
   errorMessage: string;
   showError: boolean = false;
   loginForm: FormGroup;
@@ -28,7 +30,11 @@ export class LoginComponent implements OnInit {
     }
 
     this.showError = false;
-    this.authService.login(this.loginForm.value).subscribe(() => {
+    this.loading = true;
+    
+    this.authService.login(this.loginForm.value).pipe(finalize(() => {
+      this.loading = false;
+    })).subscribe(() => {
       console.log("Logged In!");
       this.router.navigate(["/"]);
     }, (err) => {

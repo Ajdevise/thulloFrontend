@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { finalize } from 'rxjs/operators';
 import { AuthenticationService } from 'src/app/shared/services/authentication.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { AuthenticationService } from 'src/app/shared/services/authentication.se
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+  loading: boolean = false;
   showError: boolean = false;
   errorMessage: string;
   registerForm: FormGroup;
@@ -29,7 +31,11 @@ export class RegisterComponent implements OnInit {
     }
 
     this.showError = false;
-    this.authService.register(this.registerForm.value).subscribe(() => {
+    this.loading = true;
+
+    this.authService.register(this.registerForm.value).pipe(finalize(() => {
+      this.loading = false;
+    })).subscribe(() => {
       console.log("Successfully registered");
       this.router.navigate(["/"]);
     }, (err) => {

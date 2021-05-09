@@ -13,6 +13,7 @@ import { AppInitService } from './shared/initialization/app-init.service';
 import { initializeApp1 } from './shared/initialization/initialize-function';
 import { BoardsComponent } from './components/boards/boards.component';
 import { AuthInterceptor } from './shared/interceptor/auth-interceptor';
+import { LoadingComponent } from './shared/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AuthInterceptor } from './shared/interceptor/auth-interceptor';
     LoginComponent,
     RegisterComponent,
     AlertComponent,
-    BoardsComponent
+    BoardsComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
