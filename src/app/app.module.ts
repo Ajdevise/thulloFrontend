@@ -14,6 +14,8 @@ import { initializeApp1 } from './shared/initialization/initialize-function';
 import { BoardsComponent } from './components/boards/boards.component';
 import { AuthInterceptor } from './shared/interceptor/auth-interceptor';
 import { LoadingComponent } from './shared/loading/loading.component';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { ProfilePictureComponent } from './shared/components/profile-picture/profile-picture.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { LoadingComponent } from './shared/loading/loading.component';
     RegisterComponent,
     AlertComponent,
     BoardsComponent,
-    LoadingComponent
+    LoadingComponent,
+    NavbarComponent,
+    ProfilePictureComponent
   ],
   imports: [
     BrowserModule,

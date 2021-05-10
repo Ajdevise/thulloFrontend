@@ -31,6 +31,12 @@ export class AuthenticationService {
     return this.authenticateUser('login', loginData);
   }
 
+  logout() {
+    localStorage.setItem("token", undefined);
+    this.loggedIn = false;
+    this.userData = null;
+  }
+
   private authenticateUser(endpoint: string, data: Login | Register): Observable<AuthResponse> {
     return this.http.post<AuthResponse>(this.BASE_URL + endpoint, data).pipe(tap((authResponse) => {
       this.setAuthData(authResponse);

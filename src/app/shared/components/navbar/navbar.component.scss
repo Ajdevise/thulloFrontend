@@ -1,0 +1,124 @@
+.nav {
+    background-color: var(--col-white);
+    box-shadow: var(--box-shadow);
+    padding: 0 1.5rem; 
+    display: grid;
+    grid-template-columns: max-content 1fr repeat(2, max-content);
+    column-gap: 2.75rem;
+    align-items: center;
+    
+    &__logo-link {
+        display: block;
+        height: 1.8125rem; 
+        cursor: pointer;
+    }
+
+    &__logo-img {
+        height: 100%;
+        width: 100%;
+    }
+
+    &__board-name {
+        font-size: 1.125rem;
+        font-weight: 500;
+        padding-right: 1.5rem;
+        border-right: 1px solid var(--col-gray--2);
+    }
+
+    &__boards-button {
+        margin-left: 1.5rem;
+        font-size: 0.75rem;
+        padding: 0.4375rem 1rem;
+        background-color: var(--col-gray--3);
+        color: var(--col-gray--4);
+        font-weight: 500;
+        border-radius: .5rem;
+    }
+
+    &__search {
+        width: 21.125rem;
+        box-shadow: var(--box-shadow--2);
+        padding: 2px;
+        border-radius: 8px;
+
+        &:focus-within {
+            outline: 1px solid rgba(0, 0, 0, .55);
+        }
+    }
+
+    &__input {
+        font-size: .625rem;
+        padding-left: .75rem;
+        flex: 100%;
+
+        &:focus {
+            outline: none; 
+        }
+    }
+
+    &__user {
+        position: relative;
+        cursor: pointer;
+        padding: 1.4375rem 0;
+    }
+
+    &__user:hover & {
+        
+        &__dropdown {
+            transform: translateY(100%) scaleY(1);
+        }
+
+        &__dropdown-link {
+            opacity: 1;
+        }
+
+        &__icon {
+            transform: rotate(180deg); 
+        }
+    }
+
+    &__icon {
+        transition: all .2s;
+    }
+
+    &__user-name {
+        margin-left: 0.6875rem;
+        margin-right: 1.1875rem; 
+        font-size: 0.75rem;
+        font-weight: 700;
+    }
+
+    &__search-button {
+        font-size: .625rem;
+        padding: 0.4375rem 1.25rem;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+
+    &__dropdown {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: translateY(100%) scaleY(0);
+        background-color: var(--col-white);
+        width: max(100%, 10rem);
+        text-align: center;
+        border-radius: 9px;
+        overflow: hidden;
+        transition: all .2s;
+        transform-origin: top left;
+    }
+
+    &__dropdown-link {
+        display: block;
+        font-size: .9rem;
+        padding: 1rem 0;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity .2s .1s, background-color .2s;
+
+        &:hover {
+            background-color: var(--col-gray--2);
+        }
+    }
+}

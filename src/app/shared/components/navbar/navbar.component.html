@@ -1,0 +1,30 @@
+<nav class="nav">
+    <a class="nav__logo-link">
+        <img src="../../../../assets/images/Logo.svg" alt="Thullo logo" class="nav__logo-img">
+    </a>
+
+    <div class="nav__board-info flex align-center">
+        <h2 class="nav__board-name">Devchallenges Board</h2>
+        <button class="nav__boards-button">
+            All boards
+        </button>
+    </div>
+
+    <div class="nav__search flex">
+        <input type="text" placeholder="Keyword" class="nav__input">
+        <button class="cta nav__search-button">Search</button>
+    </div>
+
+    <div class="nav__user flex align-center">
+        <app-profile-picture [user]="user" size="2rem"></app-profile-picture>
+        <span class="nav__user-name">{{ user.username }}</span>
+        <span class="nav__icon">&#9207;</span>
+
+        <div class="nav__dropdown">
+            <a class="nav__dropdown-link">Boards</a>
+            <a class="nav__dropdown-link">Invitations</a>
+            <a class="nav__dropdown-link">Profile</a>
+            <a class="nav__dropdown-link" (click)="logout()">Logout</a>
+        </div>
+    </div>
+</nav>
