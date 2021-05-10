@@ -13,9 +13,10 @@ import { AppInitService } from './shared/initialization/app-init.service';
 import { initializeApp1 } from './shared/initialization/initialize-function';
 import { BoardsComponent } from './components/boards/boards.component';
 import { AuthInterceptor } from './shared/interceptor/auth-interceptor';
-import { LoadingComponent } from './shared/loading/loading.component';
+import { LoadingComponent } from './shared/components/loading/loading.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { ProfilePictureComponent } from './shared/components/profile-picture/profile-picture.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ProfilePictureComponent } from './shared/components/profile-picture/pro
     BoardsComponent,
     LoadingComponent,
     NavbarComponent,
-    ProfilePictureComponent
+    ProfilePictureComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
