@@ -37,6 +37,10 @@ export class AuthenticationService {
     this.userData = null;
   }
 
+  getUserById(id: string): Observable<{user: User}> {
+    return this.http.get<{user: User}>(this.BASE_URL + id);
+  }
+
   private authenticateUser(endpoint: string, data: Login | Register): Observable<AuthResponse> {
     return this.http.post<AuthResponse>(this.BASE_URL + endpoint, data).pipe(tap((authResponse) => {
       this.setAuthData(authResponse);

@@ -15,8 +15,8 @@
             <h2 class="form__heading">Register</h2>
             <div class="form__control">
                 <label for="username">Username</label>
-                <input type="text" id="username" placeholder=" " minlength="4" formControlName="username" required>
-                <small>Minimum length is 4 characters</small>
+                <input type="text" id="username" placeholder=" " minlength="4" maxlength="20" formControlName="username" required>
+                <small>Must be between 4 and 20 characters</small>
             </div>
             <div class="form__control">
                 <label for="email">Email</label>
@@ -25,8 +25,8 @@
             </div>
             <div class="form__control">
                 <label for="password">Password</label>
-                <input type="password" id="password" placeholder=" " minlength="4" formControlName="password" required>
-                <small>Minimum length is 4 characters</small>
+                <input type="password" id="password" placeholder=" " minlength="4" maxlength="20" formControlName="password" required>
+                <small>Must be between 4 and 20 characters</small>
             </div>
             <button class="cta" type="submit" [disabled]="registerForm.invalid">Register</button>
             <p class="form__redirect">If you already have an account <a routerLink="/login" data-link="true">login</a></p>

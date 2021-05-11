@@ -2,6 +2,7 @@
     max-width: 50rem;
     width: 100%;
     display: flex;
+    box-shadow: var(--box-shadow--2); 
 
     @include breakpoints-down("medium") {
         justify-content: center;

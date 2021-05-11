@@ -1,1 +1,29 @@
-<p>profile works!</p>
+<app-loading *ngIf="!fetchedUser; else loaded"></app-loading>
+<ng-template #loaded>
+    <section class="profile container">
+        <div class="flex align-center justify-between">
+            <h2 class="profile__heading">Profile</h2>
+            <button class="cta" *ngIf="isOwner()" routerLink="edit">Edit</button>
+        </div>
+        <hr class="profile__separator">
+        <div class="profile__group flex align-center justify-between">
+            <p class="profile__property">Avatar</p>
+            <app-profile-picture [user]="fetchedUser" size="6rem"></app-profile-picture>
+        </div>
+        <div class="profile__group flex align-center justify-between">
+            <p class="profile__property">Name</p>
+            <p class="profile__value">{{ fetchedUser.username }}</p>
+        </div>
+        <div class="profile__group flex align-center justify-between">
+            <p class="profile__property">Email</p>
+            <p class="profile__value">{{ fetchedUser.email }}</p>
+        </div>
+        <div class="profile__group flex align-center justify-between">
+            <p class="profile__property">Bio</p>
+            <p class="profile__value" *ngIf="fetchedUser.bio; else noBio">{{ fetchedUser.bio }}</p>
+            <ng-template #noBio>
+                <p class="profile__value">There is no bio yet</p>
+            </ng-template>
+        </div>
+    </section>
+</ng-template>

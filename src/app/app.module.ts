@@ -17,6 +17,9 @@ import { LoadingComponent } from './shared/components/loading/loading.component'
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { ProfilePictureComponent } from './shared/components/profile-picture/profile-picture.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { AppWrapperComponent } from './components/app-wrapper/app-wrapper.component';
+import { ClickOutsideDirective } from './shared/directives/click-outside.directive';
+import { ProfileEditComponent } from './components/profile/profile-edit/profile-edit.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { ProfileComponent } from './components/profile/profile.component';
     LoadingComponent,
     NavbarComponent,
     ProfilePictureComponent,
-    ProfileComponent
+    ProfileComponent,
+    AppWrapperComponent,
+    ClickOutsideDirective,
+    ProfileEditComponent
   ],
   imports: [
     BrowserModule,
