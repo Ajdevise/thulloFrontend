@@ -8,7 +8,7 @@
                 <path d="M18 4C18 1.79086 19.7909 0 22 0H28C30.2091 0 32 1.79086 32 4V14C32 16.2091 30.2091 18 28 18H22C19.7909 18 18 16.2091 18 14V4Z" fill="currentColor"/>
             </svg>
         </div>
-        <form class="form" (ngSubmit)="login()" [formGroup]="loginForm">
+        <form class="form form--auth" (ngSubmit)="login()" [formGroup]="loginForm">
             <app-alert [show]="showError">
                 <span>{{ errorMessage }}</span>
             </app-alert>

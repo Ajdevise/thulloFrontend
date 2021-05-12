@@ -6,6 +6,7 @@
 
     @include breakpoints-down("medium") {
         justify-content: center;
+        box-shadow: none;
     }
 }
 

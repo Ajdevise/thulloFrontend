@@ -1,1 +1,38 @@
-<p>profile-edit works!</p>
+<section class="container" *ngIf="!loading">
+    <div class="flex align-center justify-between page-heading">
+        <h2>Edit {{ user.username }} account</h2>
+        <a data-link="true" routerLink="/users/{{ user._id }}">Go Back to Profile</a>
+    </div>
+    <hr>
+    <form class="form" (ngSubmit)="editProfile()" [formGroup]="editProfileForm">
+        <app-alert [show]="showError">
+            <span>Form must not be empty</span>
+        </app-alert>
+        <div class="form__control">
+            <label aria-labelledby="label-text" class="form__file-label">
+                <span id="label-text" hidden>Change Profile Picture</span>
+                <span class="overlay descendants-center">Change avatar</span>
+                <app-profile-picture [user]="user" size="10rem"></app-profile-picture>
+                <input type="file" accept="image/*" class="sr-only" (input)="filePreview(file)" formControlName="image" #file>
+            </label>
+        </div>
+        <div class="form__control">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder=" " formControlName="username" minlength="4" maxlength="20">
+            <small>Must be between 4 and 20 characters</small>
+        </div>
+        <div class="form__control">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder=" " formControlName="email">
+            <small>Must be email</small>
+        </div>
+        <div class="form__control">
+            <label for="bio">Bio</label>
+            <textarea formControlName="bio" id="bio"></textarea>
+        </div>
+        <!-- Check this disabled state -->
+        <button class="cta" [disabled]="!editProfileForm.valid || editProfileForm.pristine">Edit Profile</button>
+    </form>
+</section>
+
+<app-loading *ngIf="loading"></app-loading>

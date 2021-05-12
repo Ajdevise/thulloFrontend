@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppWrapperComponent } from './components/app-wrapper/app-wrapper.component';
 import { BoardsComponent } from './components/boards/boards.component';
+import { ProfileEditComponent } from './components/profile/profile-edit/profile-edit.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { LoadingComponent } from './shared/components/loading/loading.component';
 import { LoginComponent } from './shared/components/login/login.component';
 import { RegisterComponent } from './shared/components/register/register.component';
 import { IsAuthenticatedGuard } from './shared/guards/is-authenticated.guard';
 import { IsNotAuthenticatedGuard } from './shared/guards/is-not-authenticated.guard';
+import { IsOwnerGuard } from './shared/guards/is-owner.guard';
 
 
 const routes: Routes = [
@@ -16,7 +18,7 @@ const routes: Routes = [
   { path: '', component: AppWrapperComponent, canActivate: [IsAuthenticatedGuard], children: [
     { path: '', component: BoardsComponent },
     { path: 'users/:id', component: ProfileComponent },
-    { path: 'users/:id/edit', component: LoadingComponent},
+    { path: 'users/:id/edit', component: ProfileEditComponent, canActivate: [IsOwnerGuard]},
     { path: 'board/:id', component: LoadingComponent }
   ]}
 ];

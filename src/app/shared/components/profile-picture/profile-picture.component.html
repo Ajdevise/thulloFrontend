@@ -1,4 +1,6 @@
 <div class="no-image descendants-center" *ngIf="!user.image; else hasImage">
     <span>{{ user.username.slice(0, 2).toUpperCase() }}</span>
 </div>
-<ng-template #hasImage></ng-template>
+<ng-template #hasImage>
+    <img [src]="user.image" [alt]="user.username + ' account'">
+</ng-template>

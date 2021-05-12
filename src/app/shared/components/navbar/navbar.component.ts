@@ -17,6 +17,9 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.authService.getUserData();
+    this.authService.userDataSub().subscribe(user => {
+      this.user = user;
+    })
     this.toggleBoardView(this.router.url);
     this.router.events.subscribe(e => {
       if(e instanceof NavigationEnd) {

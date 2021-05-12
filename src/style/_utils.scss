@@ -33,6 +33,7 @@
 }
 
 .container {
+    padding: 4rem;
     width: 100%;
     max-width: 70.75rem;
     margin: 0 auto;
@@ -40,3 +41,9 @@
     padding-right: 2rem;
 }
 
+.sr-only {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    top: 0;
+}
