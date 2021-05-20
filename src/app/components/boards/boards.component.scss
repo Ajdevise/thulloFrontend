@@ -1,0 +1,72 @@
+.modal {
+    width: 100%;
+    max-width: 18.75rem;
+    background-color: var(--col-white);
+    padding: 1.5rem;
+    border-radius: .5rem;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    z-index: 2000;
+    transition: all .3s;
+
+    &__img {
+        width: 100%;
+        height: 4.875rem;
+        background-color: var(--col-gray--2);  
+        border-radius: .5rem;
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__close {
+        font-size: 1.3rem;
+        padding: .2rem .7rem;
+        position: absolute;
+        right: .5rem;
+        top: .5rem;
+        border-radius: .8rem;
+    }
+
+    &__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, .35);
+        transition: all .3s;
+    }
+
+    &__form {
+        padding: 0;
+        margin-top: 0.625rem;
+        row-gap: 1.3125rem;
+    }
+
+    &__title-input {
+        border-radius: .5rem;
+        font-size: 0.625rem;
+        padding: 0.625rem 1rem;
+        background-color: var(--col-white);
+        border: 1px solid var(--col-gray--2);
+        box-shadow: var(--box-shadow--2);
+    }
+
+    &__error {
+        font-size: 0.625rem;
+    }
+
+    .cta__secondary {
+        width: 100%;
+        text-align: left; 
+    }
+}
+
+.list {
+    display: flex;
+    gap: 2.625rem;
+    flex-wrap: wrap;
+    justify-items: center;
+}

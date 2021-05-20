@@ -34,37 +34,8 @@
         border-right: 1px solid var(--col-gray--2);
     }
 
-    &__boards-button {
+    &__board-btn {
         margin-left: 1.5rem;
-        font-size: 0.75rem;
-        padding: 0.4375rem 1rem;
-        background-color: var(--col-gray--3);
-        color: var(--col-gray--4);
-        font-weight: 500;
-        border-radius: .5rem;
-    }
-
-    &__search {
-        width: 100%;
-        max-width: 21.125rem;
-        box-shadow: var(--box-shadow--2);
-        padding: 2px;
-        border-radius: 8px;
-        justify-self: end;
-
-        &:focus-within {
-            outline: 1px solid rgba(0, 0, 0, .55);
-        }
-    }
-
-    &__input {
-        font-size: .625rem;
-        padding-left: .75rem;
-        flex: 100%;
-
-        &:focus {
-            outline: none; 
-        }
     }
 
     &__user {
@@ -99,13 +70,6 @@
         font-size: 0.75rem;
         font-weight: 700;
         cursor: pointer;
-    }
-
-    &__search-button {
-        font-size: .625rem;
-        padding: 0.4375rem 1.25rem;
-        font-weight: 500;
-        text-transform: capitalize;
     }
 
     &__dropdown {

@@ -11,8 +11,38 @@
         background-color: var(--col-dark-blue);
     }
 
+    &__ternary {
+        background: none;
+        border: none;
+        color: var(--col-gray--4);
+
+        &:hover {
+            color: #000;
+        }
+    }
+
     &[disabled] {
         cursor: not-allowed;
         opacity: .7; 
+    }
+
+    &--small {
+        padding: .3rem 1rem;
+        font-size: .8rem;
+        font-weight: 400;
+        text-transform: capitalize;
+    }
+
+    &__secondary {
+        font-size: 0.75rem;
+        padding: 0.4375rem 1rem;
+        background-color: var(--col-gray--3);
+        color: var(--col-gray--4);
+        font-weight: 500;
+        border-radius: .5rem;
+
+        &:hover {
+            background-color: darken(#F2F2F2, 5%); 
+        }
     }
 }

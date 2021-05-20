@@ -1,0 +1,7 @@
+<a [routerLink]="'/board/' + board._id">
+    <img [src]="board.cover" alt="">
+    <h3>{{ board.title }}</h3>
+    <div class="members">
+        <app-profile-picture *ngFor="let member of board.members" [user]="member" size="2.5rem"></app-profile-picture>
+    </div>
+</a>

@@ -20,6 +20,9 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { AppWrapperComponent } from './components/app-wrapper/app-wrapper.component';
 import { ClickOutsideDirective } from './shared/directives/click-outside.directive';
 import { ProfileEditComponent } from './components/profile/profile-edit/profile-edit.component';
+import { FindImageComponent } from './shared/components/find-image/find-image.component';
+import { VisibilityComponent } from './shared/components/visibility/visibility.component';
+import { BoardComponent } from './components/boards/board/board.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { ProfileEditComponent } from './components/profile/profile-edit/profile-
     ProfileComponent,
     AppWrapperComponent,
     ClickOutsideDirective,
-    ProfileEditComponent
+    ProfileEditComponent,
+    FindImageComponent,
+    VisibilityComponent,
+    BoardComponent
   ],
   imports: [
     BrowserModule,

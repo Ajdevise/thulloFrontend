@@ -5,14 +5,14 @@
 
     <div class="nav__board-info flex align-center" *ngIf="boardView">
         <strong class="nav__board-name">Devchallenges Board</strong>
-        <button class="nav__boards-button">
+        <button class="cta__secondary nav__board-btn">
             All boards
         </button>
     </div>
 
-    <div class="nav__search flex" *ngIf="boardView">
-        <input type="text" placeholder="Keyword" class="nav__input">
-        <button class="cta nav__search-button">Search</button>
+    <div class="nav__search search" *ngIf="boardView">
+        <input type="text" placeholder="Keyword">
+        <button class="cta">Search</button>
     </div>
 
     <div class="nav__user flex align-center" [ngClass]="{'active': isDropdownActive}">

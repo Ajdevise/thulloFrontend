@@ -54,6 +54,13 @@
         text-align: center;
     }
 
+    &__two-columns {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1.1875rem;
+    }
+
     &__file-label {
         position: relative;
         display: block;

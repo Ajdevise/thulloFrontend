@@ -1,8 +1,8 @@
 <app-loading *ngIf="!fetchedUser; else loaded"></app-loading>
 <ng-template #loaded>
     <section class="profile container">
-        <div class="flex align-center justify-between">
-            <h2 class="profile__heading">Profile</h2>
+        <div class="page-heading">
+            <h2>Profile</h2>
             <button class="cta" *ngIf="isOwner()" routerLink="edit">Edit</button>
         </div>
         <hr class="profile__separator">

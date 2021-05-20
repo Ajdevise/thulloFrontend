@@ -1,0 +1,46 @@
+:host {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 200%;
+    max-width: 15.3125rem;
+    background-color: var(--col-white);
+    z-index: 3000;
+    border-radius: .5rem;
+    border: 1px solid var(--col-gray--2);
+    padding: 0.6875rem;
+}
+
+.button {
+    margin-top: .2rem;
+    font-size: .75rem;
+    text-align: left;
+    width: 100%;
+    border-radius: 8px;
+    padding: 0.8125rem;
+
+    &__heading {
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon {
+        width: 1.2em;
+        height: 1.2em;
+        color: var(--col-font-heading);
+        margin-right: .5rem;
+    }
+
+    &__text {
+        font-size: 0.625rem;
+        color: var(--col-gray--4);
+    }
+
+    &:hover {
+        background-color: var(--col-gray--3); 
+    }
+
+    &.active {
+        background-color: var(--col-gray--3);
+    }
+}

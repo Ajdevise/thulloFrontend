@@ -1,0 +1,20 @@
+<h4>Photo Search</h4>
+<p class="h4-subheading">Search unsplash for photos</p>
+<form [formGroup]="searchForm" (ngSubmit)="searchByQuery(true)">
+    <div class="search">
+        <input type="text" placeholder="Keywords..." formControlName="query">
+        <button class="cta" type="submit">Find</button>
+    </div>
+</form>
+<div class="list">
+    <app-loading position="absolute" *ngIf="loading; else loadedImages"></app-loading>
+    <ng-template #loadedImages>
+        <button class="image-wrapper" *ngFor="let image of images" (click)="imageClicked(image.urls.small)">
+            <img [src]="image.urls.small" [alt]="image.tags.title">
+        </button>
+    </ng-template>
+</div>
+<div class="controls flex align-center justify-between">
+    <button class="cta__ternary cta--small" *ngIf="currentPage > 1" (click)="prevPage()">Prev</button>
+    <button class="cta__ternary cta--small" (click)="nextPage()">Next</button>
+</div>
